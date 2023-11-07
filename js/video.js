@@ -5,12 +5,13 @@ window.addEventListener("load", function() {
 	video.loop = false;
 	video.autoplay = false;
 	video.load();
-	document.querySelector("#volume").textContent = 100;
+	
 });
 
 document.querySelector("#play").addEventListener("click", function() {
 	video.play();
 	video.volume = document.querySelector("#slider").value / 100;
+	document.querySelector("#volume").textContent = document.querySelector("#slider").value + "%";
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -50,7 +51,7 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 document.querySelector("#slider").addEventListener("click", function() {
 	console.log(document.querySelector("#slider").value);
-	document.querySelector("#volume").textContent = document.querySelector("#slider").value;
+	document.querySelector("#volume").textContent = document.querySelector("#slider").value + "%";
 	video.volume = document.querySelector("#slider").value / 100;
 });
 
